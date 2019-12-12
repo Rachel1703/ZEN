@@ -1,0 +1,61 @@
+<html>
+    <body>
+        <script>
+            var arr=[];
+            var obj=[
+                {"name":"angel",
+            "children":
+            [
+                {
+                    "name":"anu",
+                    "children":[{
+                        "name":"diya",
+                        "children":[
+                            {
+                                "name":"teddy"
+                            }
+                        ]
+                    }]
+                }
+                   
+            ]
+            },
+            {"name":"Dimple",
+            "children":
+            [
+                {
+                    "name":"anu"
+
+                }
+            ]
+            },
+            {"name":"sandy",
+            "children":[{
+                "name":"aashiq",
+                "children":[{
+                    "name":"Rachel",
+                    "children":[{
+                        "name":"Sushma"
+                    }]
+                }]
+            }]
+            },
+            {"name":"rashi",
+            "children":"2"
+            },
+        ]
+        
+        function json(obj){
+            obj.forEach(ele => {
+                arr.push(ele.name);
+                if(Array.isArray(ele.children))
+                {
+                    json(ele.children)
+                }
+            });
+        }
+        json(obj);
+        document.write(arr);
+        </script>
+    </body>
+</html>
